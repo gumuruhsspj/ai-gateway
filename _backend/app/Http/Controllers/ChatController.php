@@ -22,7 +22,7 @@ class ChatController extends Controller
     try {
         // 3. Tembak Groq pakai Model yang kamu tes di curl tadi
         $response = Http::withHeaders([
-            'Authorization' => 'Bearer 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',
+            'Authorization' => 'Bearer ' . env('GROQ_API_KEY'),
             'Content-Type'  => 'application/json',
         ])->timeout(30)->post('https://api.groq.com/openai/v1/chat/completions', [
             'model' => 'llama-3.1-8b-instant', // SAMA DENGAN CURL KAMU
