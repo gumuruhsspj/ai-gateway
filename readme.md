@@ -52,8 +52,10 @@ php artisan serve
 ### 2. Setup Bot Engine (Go) - *Result Oriented Choice*
 ```bash
 cd _wa_bot_go
+
 # Build for Windows
 go build -o wa-bot.exe
+
 # Build for Linux (antiX)
 set GOOS=linux
 set GOARCH=amd64
@@ -85,4 +87,4 @@ npm run dev
 
 ---
 > **Note:** Gunakan versi Go (`_wa_bot_go`) untuk stabilitas jangka panjang dan penggunaan resource yang lebih hemat pada server spek lebih ekonomis.
-```
+
