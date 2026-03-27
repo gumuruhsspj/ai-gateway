@@ -1,5 +1,4 @@
 
-```markdown
 # 🚀 AI Gateway - Multi-Engine WhatsApp Bridge
 
 [![Go Version](https://img.shields.io/badge/Go-1.21+-00ADD8?style=for-the-badge&logo=go)](https://go.dev/)
