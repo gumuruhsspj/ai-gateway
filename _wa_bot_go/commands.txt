@@ -1,0 +1,25 @@
+
+sudah beres coding lanjut:
+> go mod tidy
+> go build -o wa-bot.exe 
+
+atau
+
+> go build -v -o wa-bot.exe
+
+pembersihan
+> go clean -cache -modcache
+
+atau mo compile untuk linux:
+:: 1. Set target sistem operasinya ke Linux
+> set GOOS=linux
+
+:: 2. Set arsitekturnya (biasanya amd64 untuk PC/Server modern)
+> set GOARCH=amd64
+
+:: 3. Jalankan build
+> go build -o wa-bot-linux
+
+tinggal di :
+> chmod +x wa-bot-linux
+> ./wa-bot-linux
