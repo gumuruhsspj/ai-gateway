@@ -1,4 +1,5 @@
 
+```markdown
 # 🚀 AI Gateway - Multi-Engine WhatsApp Bridge
 
 [![Go Version](https://img.shields.io/badge/Go-1.21+-00ADD8?style=for-the-badge&logo=go)](https://go.dev/)
@@ -19,14 +20,15 @@ Sistem Gateway AI modular yang menghubungkan WhatsApp dengan Engine Kecerdasan B
 ├── _frontend        # VueJS 3 Modular (Dashboard & QR Monitor)
 ├── _wa_bot_node     # WhatsApp Client (Legacy Node.js version)
 └── _wa_bot_go       # WhatsApp Client (High-Performance Go version) - RECOMMENDED
-
+```
 
 ## 🛠️ Tech Stack & Requirements
 
 ### Core Components
 * **Backend:** PHP 8.2, Laravel 10, MySQL/PostgreSQL.
 * **Frontend:** Vue.js 3, Vite, TailwindCSS.
-* **WhatsApp Engine:** * **Go:** `whatsmeow` library (Low Memory Consumption).
+* **WhatsApp Engine:**
+    * **Go:** `whatsmeow` library (Low Memory Consumption).
     * **Node:** `whatsapp-web.js` / `baileys` (Optional).
 
 ### Hardware Recommendation
@@ -54,7 +56,9 @@ cd _wa_bot_go
 # Build for Windows
 go build -o wa-bot.exe
 # Build for Linux (antiX)
-set GOOS=linux && set GOARCH=amd64 && go build -o wa-bot-linux
+set GOOS=linux
+set GOARCH=amd64
+go build -o wa-bot-linux
 ./wa-bot.exe
 ```
 
