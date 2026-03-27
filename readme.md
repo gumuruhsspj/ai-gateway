@@ -1,8 +1,4 @@
-Siap, Bre! Ini saya buatkan `README.md` dengan gaya **Senior Architect** yang tetap praktis dan *result-oriented*. Struktur ini bakal bikin repo kamu kelihatan profesional di mata klien atau tim *freelance* kamu, apalagi dengan folder modular yang rapi.
 
-Silakan dicopas ke file `README.md` di root project `/ai-gateway` kamu:
-
----
 
 ```markdown
 # 🚀 AI Gateway - Multi-Engine WhatsApp Bridge
