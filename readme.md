@@ -1,7 +1,4 @@
 
----
-
-```markdown
 # 🚀 AI Gateway - Multi-Engine WhatsApp Bridge
 
 [![Go Version](https://img.shields.io/badge/Go-1.21+-00ADD8?style=for-the-badge&logo=go)](https://go.dev/)
@@ -22,9 +19,7 @@ Sistem Gateway AI modular yang menghubungkan WhatsApp dengan Engine Kecerdasan B
 ├── _frontend        # VueJS 3 Modular (Dashboard & QR Monitor)
 ├── _wa_bot_node     # WhatsApp Client (Legacy Node.js version)
 └── _wa_bot_go       # WhatsApp Client (High-Performance Go version) - RECOMMENDED
-```
 
----
 
 ## 🛠️ Tech Stack & Requirements
 
