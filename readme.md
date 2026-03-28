@@ -33,10 +33,18 @@ Sistem Gateway AI modular yang menghubungkan WhatsApp dengan Engine Kecerdasan B
       * **Go:** `whatsmeow` library (Low Memory Consumption).
       * **Node:** `whatsapp-web.js` / `baileys` (Optional).
 
-### Hardware Recommendation
+### 🧠 AI Engine Options
+
+Sistem ini mendukung integrasi dua jalur pemrosesan AI:
+
+1.  **Groq Cloud API (Fast Access):** Menggunakan LPU™ untuk akses super cepat. Tidak membebani server lokal. (Sangat disarankan untuk RAM 2GB).
+2.  **Local Ollama (Self-Hosted):** Privasi data total.
+      * **Konsekuensi:** Butuh spesifikasi tinggi (**RAM 16GB+ & GPU VRAM 8GB+**) untuk menjalankan model seperti Llama3 atau Mistral secara lancar.
+
+### Hardware Minimum 
 
   * **CPU:** Intel i3 Gen 4 (Haswell) or better.
-  * **RAM:** 2GB Minimum.
+  * **RAM:** 2GB Minimum (Cloud AI Mode) / 16GB+ (Local AI Mode).
   * **OS:** Windows 10 / Linux antiX (CLI Mode Optimized).
 
 -----
@@ -82,6 +90,7 @@ npm run dev
 ## 🛡️ Features
 
   - [x] **Modular Architecture:** Ganti bot engine (Node/Go) tanpa merusak API utama.
+  - [x] **Hybrid AI Path:** Pilih antara Groq (Online) atau Ollama (Local).
   - [x] **Real-time QR:** QR Code otomatis tersimpan di `_backend/public/qrcodes`.
   - [x] **Memory Optimized:** Versi Go hanya mengonsumsi RAM \< 50MB.
   - [x] **Cross-Platform:** Siap dideploy di Windows Server maupun Linux antiX.
@@ -90,7 +99,7 @@ npm run dev
 
 ## 📉 Scalability & Memory Benchmarks
 
-Estimasi penggunaan RAM total (OS + Laravel + Database + WhatsApp Engine) berdasarkan jumlah akun/session yang aktif secara bersamaan. Data ini krusial untuk perencanaan kapasitas pada VPS atau Live Server.
+Estimasi penggunaan RAM total (OS + Laravel + Database + WhatsApp Engine) berdasarkan jumlah akun/session yang aktif secara bersamaan.
 
 | Jumlah Akun (QR Login) | Engine Node.js (Puppeteer) | Engine Go (Whatsmeow) | Selisih Efisiensi |
 | :--- | :--- | :--- | :--- |
@@ -102,8 +111,9 @@ Estimasi penggunaan RAM total (OS + Laravel + Database + WhatsApp Engine) berdas
 
 ### 🔍 Technical Insight
 
-  * **Engine Go (`_wa_bot_go`):** Berjalan pada level *Raw Socket*. Penggunaan resource bersifat linier dan sangat ringan. Satu server RAM 2GB mampu melayani puluhan akun personil/divisi sekaligus secara stabil.
-  * **Engine Node.js (`_wa_bot_node`):** Menggunakan Headless Chromium. Setiap akun membuka satu instance browser virtual yang memakan resource besar (Eksponensial). Tidak disarankan untuk penggunaan multi-user pada hardware terbatas.
+  * **Engine Go (`_wa_bot_go`):** Berjalan pada level *Raw Socket*. Satu server RAM 2GB mampu melayani puluhan akun personil sekaligus secara stabil menggunakan **Groq API**.
+  * **Engine Node.js (`_wa_bot_node`):** Setiap akun membuka satu instance browser virtual yang memakan resource eksponensial. Tidak disarankan untuk hardware terbatas.
+  * **Ollama Warning:** Jika menjalankan Ollama di server yang sama dengan RAM 2GB, sistem dipastikan akan **Hang/Freeze**. Gunakan Ollama hanya pada dedicated AI server.
 
 -----
 
@@ -115,6 +125,6 @@ Estimasi penggunaan RAM total (OS + Laravel + Database + WhatsApp Engine) berdas
 
 -----
 
-> **Note:** Gunakan versi Go (`_wa_bot_go`) untuk stabilitas jangka panjang dan penggunaan resource yang lebih hemat pada server spek lebih ekonomis.
+> **Note:** Gunakan versi Go (`_wa_bot_go`) dan Groq API untuk stabilitas maksimal pada server spek ekonomis.
 
 -----
